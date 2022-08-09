@@ -1,0 +1,127 @@
+body {
+  font-family: "PT Serif", serif;
+}
+
+h1 {
+  color: rgb(255, 51, 102);
+  font-weight: bolder;
+  margin: 0;
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 35px;
+  padding: 25px 0 5px;
+  text-shadow: 0 0 10px rgba(58, 6, 27, 0.534);
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h2,
+.futureweather {
+  color: #fff;
+  background: rgb(255, 51, 102);
+}
+
+h1,
+.heading,
+.country,
+.daydate {
+  color: rgb(255, 51, 102);
+}
+
+.weatherapp {
+  border: solid 4px rgb(255, 51, 102);
+  padding: 5px 20px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.heading {
+  font-weight: normal;
+}
+
+.country {
+  position: relative;
+  top: -6px;
+  left: 70%;
+}
+
+.inputs {
+  padding: 15px 0;
+}
+
+.cityinput,
+.searchinput {
+  width: 100%;
+}
+
+.searchinput {
+  background: rgb(255, 51, 102);
+  color: #fff;
+  border: 2px solid rgb(224, 0, 90);
+  border-radius: 3px;
+}
+
+.daydate {
+  text-align: center;
+  margin-top: 7px;
+  font-size: 20px;
+  background: rgba(255, 51, 102, 10%);
+  text-shadow: 0 0 10px rgb(224, 0, 90);
+}
+
+.currentweather {
+  padding: 0 0 10px 10px;
+  margin-top: 10px;
+  background: rgba(255, 51, 102, 25%);
+  font-size: 15px;
+}
+
+.currenttemp {
+  font-size: 18px;
+}
+
+.futuredays {
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.days {
+  text-shadow: 0 0 10px rgba(20, 2, 9, 0.534);
+}
+
+.greenbutton,
+.pinkbutton,
+.bluebutton {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+}
+
+.greenbutton {
+  background: rgb(78, 174, 83);
+}
+
+.pinkbutton {
+  background: rgb(255, 51, 102);
+}
+
+.bluebutton {
+  background: rgb(66, 165, 245);
+}
