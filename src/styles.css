@@ -47,7 +47,7 @@ h1,
 .weatherapp {
   border: solid 4px rgb(255, 51, 102);
   padding: 5px 20px;
-  margin: 20px auto;
+  margin: 20px auto 0px;
   max-width: 600px;
 }
 
@@ -124,4 +124,10 @@ h1,
 
 .bluebutton {
   background: rgb(66, 165, 245);
+}
+
+.codelink {
+  display: block;
+  text-align: center;
+  font-size: 12px;
 }
