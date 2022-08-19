@@ -31,130 +31,132 @@
 
   <body>
     <div class="container">
-      <div class="weatherapp">
-        <form class="inputs" id="cityForm">
+      <div class="weatherapp-wrapper">
+        <div class="weatherapp">
+          <form class="inputs" id="cityForm">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="text"
+                  placeholder="Enter the city..."
+                  autocomplete="off"
+                  class="cityinput"
+                  id="city-input"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="searchinput"
+                  id="submit-input"
+                />
+                <button class="searchinput" id="location-button">
+                  My location
+                </button>
+              </div>
+            </div>
+          </form>
+
           <div class="row">
-            <div class="col-9">
-              <input
-                type="text"
-                placeholder="Enter the city..."
-                autocomplete="off"
-                class="cityinput"
-                id="city-input"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="searchinput"
-                id="submit-input"
-              />
-              <button class="searchinput" id="location-button">
-                My location
-              </button>
-            </div>
-          </div>
-        </form>
+            <div class="col-6">
+              <h1>
+                <span class="heading"> Today in </span>
+                <span id="world-city"> </span>
+              </h1>
 
-        <div class="row">
-          <div class="col-6">
-            <h1>
-              <span class="heading"> Today in </span>
-              <span id="world-city"> </span>
-            </h1>
+              <span class="country" id="country"> </span>
 
-            <span class="country" id="country"> </span>
+              <div class="daydate">
+                <br />
+              </div>
 
-            <div class="daydate">
-              <br />
-            </div>
-
-            <div class="currentweather">
-              <p>
-                <strong class="currenttemp">
-                  <span id="now-temperature"> </span> °C
-                </strong>
-                <br />
-                <em id="description"> </em>
-                <br />
-                <br />
-                <strong class="currenttemp">
-                  min / max
-                  <span id="min-temp"> </span>
-                  /
-                  <span id="max-temp"> </span>
-                  °C
-                </strong>
-                <br />
-                <br />
-
-                <em>
-                  Wind:
-                  <span id="wind-speed"> </span>
-                  m/sec
+              <div class="currentweather">
+                <p>
+                  <strong class="currenttemp">
+                    <span id="now-temperature"> </span> °C
+                  </strong>
                   <br />
-                  Humidity:
-                  <span id="humidity"> </span> %
-                </em>
-              </p>
+                  <em id="description"> </em>
+                  <br />
+                  <br />
+                  <strong class="currenttemp">
+                    min / max
+                    <span id="min-temp"> </span>
+                    /
+                    <span id="max-temp"> </span>
+                    °C
+                  </strong>
+                  <br />
+                  <br />
+
+                  <em>
+                    Wind:
+                    <span id="wind-speed"> </span>
+                    m/sec
+                    <br />
+                    Humidity:
+                    <span id="humidity"> </span> %
+                  </em>
+                </p>
+              </div>
+              <footer>
+                Choose your color
+                <button class="greenbutton"></button>
+                <button class="pinkbutton"></button>
+                <button class="bluebutton"></button>
+              </footer>
             </div>
-            <footer>
-              Choose your color
-              <button class="greenbutton"></button>
-              <button class="pinkbutton"></button>
-              <button class="bluebutton"></button>
-            </footer>
-          </div>
 
-          <div class="col-6 futureweather">
-            <h2>Forecast</h2>
-            <div class="futuredays">
-              <ul>
-                <li>
-                  <span class="days"> Sat 17/July </span>
-                  <i class="fa-solid fa-cloud-sun"></i>
-                  12° C / 25° C
-                </li>
+            <div class="col-6 futureweather">
+              <h2>Forecast</h2>
+              <div class="futuredays">
+                <ul>
+                  <li>
+                    <span class="days"> Sat 17/July </span>
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    12° C / 25° C
+                  </li>
 
-                <li>
-                  <span class="days"> Sun 18/July </span>
-                  <i class="fa-solid fa-cloud-sun"></i>
-                  12° C / 25° C
-                </li>
+                  <li>
+                    <span class="days"> Sun 18/July </span>
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    12° C / 25° C
+                  </li>
 
-                <li>
-                  <span class="days"> Mon 19/July </span>
-                  <i class="fa-solid fa-cloud-sun"></i>
-                  12° C / 25° C
-                </li>
+                  <li>
+                    <span class="days"> Mon 19/July </span>
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    12° C / 25° C
+                  </li>
 
-                <li>
-                  <span class="days">Tue 20/July </span>
-                  <i class="fa-solid fa-cloud-sun"></i>
-                  12° C / 25° C
-                </li>
+                  <li>
+                    <span class="days">Tue 20/July </span>
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    12° C / 25° C
+                  </li>
 
-                <li>
-                  <span class="days"> Wed 21/July </span>
-                  <i class="fa-solid fa-cloud-sun"></i>
-                  12° C / 25° C
-                </li>
-              </ul>
+                  <li>
+                    <span class="days"> Wed 21/July </span>
+                    <i class="fa-solid fa-cloud-sun"></i>
+                    12° C / 25° C
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+        <span class="codelink">
+          <a
+            href="https://github.com/Tania-TaniaP/my-weather-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open-source code
+          </a>
+          by Tania P
+        </span>
       </div>
-      <span class="codelink">
-        <a
-          href="https://github.com/Tania-TaniaP/my-weather-app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open-source code
-        </a>
-        by Tania P
-      </span>
     </div>
     <script src="src/script.js"></script>
   </body>
