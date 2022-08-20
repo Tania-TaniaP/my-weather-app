@@ -148,11 +148,19 @@ function convertToFahrenheit(event) {
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#now-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
 
 let celsiusTemp = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToCelsius);
 
 //Week 5 - with Matt - to have a city on the start page
 search("Paris");
