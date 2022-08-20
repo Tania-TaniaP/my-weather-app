@@ -118,13 +118,29 @@ function getCoordinates(position) {
   let units = `metric`;
   let apiKey = `2261a75fec295aecf3834a6eb8281d07`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-
   axios.get(apiUrl).then(showWeather);
 }
 
 function getLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(getCoordinates);
+}
+
+//Week 7 - Unit conversion - functions
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#now-temperature");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+function convertToCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#now-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
 // Week4 Date Day and Time - Ch1
@@ -142,22 +158,6 @@ let currentLocation = document.querySelector("#location-button");
 currentLocation.addEventListener("click", getLocation);
 
 //Week 7 - Unit conversion
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#now-temperature");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
-function convertToCelsius(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#now-temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
 let celsiusTemp = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
