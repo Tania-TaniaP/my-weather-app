@@ -82,6 +82,12 @@ function showWeather(response) {
   let country = response.data.sys.country;
   let countryElement = document.querySelector("#country");
   countryElement.innerHTML = `${country}`;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 //Week 5 - with Matt - to have a city on the start page - function
