@@ -35,7 +35,7 @@
         <div class="weatherapp">
           <form class="inputs" id="cityForm">
             <div class="row">
-              <div class="col-9">
+              <div class="col-8">
                 <input
                   type="text"
                   placeholder="Enter the city..."
@@ -44,7 +44,7 @@
                   id="city-input"
                 />
               </div>
-              <div class="col-3">
+              <div class="col-4">
                 <input
                   type="submit"
                   value="Search"
@@ -80,7 +80,11 @@
                   <strong class="currenttemp">
                     <span id="now-temperature"> </span> 
                   </strong>
-                  <em class="units">°C|°F </em>
+                  <em class="units">
+                    <a href="#"> °C </a>
+                    |
+                    <a href="#" id="fahrenheit-link"> °F </a>
+                  </em>
                   <br />
                   <strong> <em id="description"> </em> </strong>
                   </div>

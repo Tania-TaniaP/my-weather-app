@@ -89,6 +89,8 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemp = response.data.main.temp;
 }
 
 //Week 5 - with Matt - to have a city on the start page - function
@@ -138,6 +140,19 @@ form.addEventListener("submit", showCity);
 //Week 5 - Bonus - GPS location
 let currentLocation = document.querySelector("#location-button");
 currentLocation.addEventListener("click", getLocation);
+
+//Week 7 - Unit conversion
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#now-temperature");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 //Week 5 - with Matt - to have a city on the start page
 search("Paris");
