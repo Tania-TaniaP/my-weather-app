@@ -197,22 +197,25 @@ function displayForecast(response) {
 
   let forecastHTML = "<ul>";
   let days = ["Thu", "Fri", "Sat", "Sun"];
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
   <li>
   <span class="days"> ${formatDay(forecastDay.dt)} </span>
+  ${index}
   <img
   src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
   alt = ""
   width = "42"
   />
   ${Math.round(forecastDay.temp.min)}° C / ${Math.round(
-        forecastDay.temp.max
-      )}° C
+          forecastDay.temp.max
+        )}° C
   </li>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</ul>`;
