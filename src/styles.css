@@ -21,7 +21,7 @@ h2 {
 }
 
 ul {
-  margin-top: 25px;
+  margin-top: 20px;
   padding: 0;
 }
 
@@ -115,6 +115,11 @@ h1,
 
 .days {
   text-shadow: 0 0 10px rgba(20, 2, 9, 0.534);
+  padding-right: 20px;
+}
+
+.forecast-temp {
+  padding-left: 20px;
 }
 
 .greenbutton,
