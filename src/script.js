@@ -100,8 +100,6 @@ function showWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  celsiusTemp = response.data.main.temp;
-
   getForecast(response.data.coord);
 }
 
@@ -138,23 +136,6 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(getCoordinates);
 }
 
-//Week 7 - Unit conversion - functions
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#now-temperature");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
-function convertToCelsius(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#now-temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
 // Week4 Date Day and Time - Ch1
 let dates = document.querySelector(".daydate");
 let currentDayTime = new Date();
@@ -168,15 +149,6 @@ form.addEventListener("submit", showCity);
 //Week 5 - Bonus - GPS location
 let currentLocation = document.querySelector("#location-button");
 currentLocation.addEventListener("click", getLocation);
-
-//Week 7 - Unit conversion
-let celsiusTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
 
 //Week 5 - with Matt - to have a city on the start page
 search("Paris");
@@ -196,7 +168,6 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = "<ul>";
-  let days = ["Thu", "Fri", "Sat", "Sun"];
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
@@ -204,7 +175,6 @@ function displayForecast(response) {
         `
   <li>
   <span class="days"> ${formatDay(forecastDay.dt)} </span>
-  ${index}
   <img
   src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
   alt = ""
