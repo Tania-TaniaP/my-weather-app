@@ -21,14 +21,14 @@ h2 {
 }
 
 ul {
-  margin: 0;
+  margin-top: 25px;
   padding: 0;
 }
 
 li {
   list-style: none;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 h2,
@@ -103,13 +103,9 @@ h1,
   font-size: 42px;
 }
 
-a {
-  text-decoration: none;
-}
-
-.currentweather .active {
-  color: black;
-  cursor: default;
+.units {
+  position: relative;
+  top: -20px;
 }
 
 .futuredays {
