@@ -168,3 +168,26 @@ celsiusLink.addEventListener("click", convertToCelsius);
 
 //Week 5 - with Matt - to have a city on the start page
 search("Paris");
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = "<ul>";
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <li>
+  <span class="days"> ${day}    </span>
+  <i class="fa-solid fa-cloud-sun"></i>
+  12° C / 25° C
+  </li>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</ul>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
