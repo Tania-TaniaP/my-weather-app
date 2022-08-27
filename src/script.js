@@ -42,6 +42,16 @@ function formatDate(date) {
   return `${weekDay} ${hours}:${minutes} </br> ${curDate}-${month}-${year}`;
 }
 
+//Week 8 - API call to get forecast
+function getForecast(coordinates) {
+  //console.log(coordinates);
+
+  let apiKey = "2261a75fec295aecf3834a6eb8281d07";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  //console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 //Week4 Ch 2 function - Week 5 main H/w changing: //API call to the weather app --- show the city --- show the weather
 function showWeather(response) {
   //console.log(response);
@@ -91,6 +101,8 @@ function showWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemp = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
 //Week 5 - with Matt - to have a city on the start page - function
@@ -169,7 +181,10 @@ celsiusLink.addEventListener("click", convertToCelsius);
 //Week 5 - with Matt - to have a city on the start page
 search("Paris");
 
-function displayForecast() {
+//Week 8 - moving forecast part HTML to JS - function
+function displayForecast(response) {
+  //console.log(response.data.daily);
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = "<ul>";
@@ -189,5 +204,3 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</ul>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
