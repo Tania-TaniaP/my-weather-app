@@ -122,26 +122,6 @@ h1,
   padding-left: 20px;
 }
 
-.greenbutton,
-.pinkbutton,
-.bluebutton {
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  border: none;
-}
-
-.greenbutton {
-  background: rgb(78, 174, 83);
-}
-
-.pinkbutton {
-  background: rgb(255, 51, 102);
-}
-
-.bluebutton {
-  background: rgb(66, 165, 245);
-}
 .codelink {
   font-size: 12px;
 }
