@@ -181,22 +181,36 @@ celsiusLink.addEventListener("click", convertToCelsius);
 //Week 5 - with Matt - to have a city on the start page
 search("Paris");
 
+//Week 8 - function for corect days from API
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 //Week 8 - moving forecast part HTML to JS - function
 function displayForecast(response) {
-  //console.log(response.data.daily);
+  let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = "<ul>";
   let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
   <li>
-  <span class="days"> ${day}    </span>
-  <i class="fa-solid fa-cloud-sun"></i>
-  12° C / 25° C
+  <span class="days"> ${formatDay(forecastDay.dt)} </span>
+  <img
+  src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+  alt = ""
+  width = "42"
+  />
+  ${Math.round(forecastDay.temp.min)}° C / ${Math.round(
+        forecastDay.temp.max
+      )}° C
   </li>
   `;
   });
